@@ -38,7 +38,12 @@ function deleteMe() {
   $(this).parent().remove();
 }
 
-function whenIAddAHarmonica() {
+// if we put in "event" for the argument
+function whenIAddAHarmonica(event) {
+  // this will allow us to ignore the default behavior of reloading on the page at
+  // the time of form submission
+
+  event.preventDefault();
   // stuff to do when we add a harmonica
   console.log('clicked the btn');
 

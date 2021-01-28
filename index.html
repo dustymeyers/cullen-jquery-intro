@@ -25,16 +25,18 @@
       <option>Marine Band</option>
       <option>Rocket</option>
     </select>
+    <!-- If you have a form tag, it will refresh the page when submitted.-->
+    <form>
+      <input type="radio" id="major" name="mode" />
+      <label for="major">Major</label><br />
+      <input type="radio" name="mode" id="minor" />
+      <label for="minor">Minor</label><br />
 
-    <input type="radio" id="major" name="mode" />
-    <label for="major">Major</label><br />
-    <input type="radio" name="mode" id="minor" />
-    <label for="minor">Minor</label><br />
-
-    <input type="submit" value="Submit!"" id="submitBtn" />
-    <!-- v These are the two ways to create a button ^ 
+      <input type="submit" value="Submit!"" id="submitBtn" />
+      <!-- v These are the two ways to create a button ^ 
     <button>Submit!</button> -->
 
-    <ul id="harmonicas"></ul>
+      <ul id="harmonicas"></ul>
+    </form>
   </body>
 </html>
