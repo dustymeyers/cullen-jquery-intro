@@ -19,4 +19,37 @@ function onReady() {
 
   const louderText = h1Text.toUpperCase() + '!!!!!';
   $('h1').text(louderText);
+
+  // handle the event called click
+  $('#submitBtn').on('click', whenIAddAHarmonica);
+  $('.deleteBtn').on('click', deleteMe);
+  // delete btn is created on load so vv
+  // event delegation
+  // descendent selectors
+
+  $('#harmonicas').on('click', '.deleteBtn', deleteMe);
+  console.log('delete Btn is', $('.deleteBtn'));
+}
+
+function deleteMe() {
+  // this refers to the specific thing we target at the time of the event
+  let thisThing = $(this);
+  console.log('Whats this?', thisThing);
+  $(this).parent().remove();
+}
+
+function whenIAddAHarmonica() {
+  // stuff to do when we add a harmonica
+  console.log('clicked the btn');
+
+  // grab that data
+  let brand = $('#brand').val();
+  console.log('brand is', brand);
+
+  $('#harmonicas').append(`
+  <li class="harmonica-item">
+    Brand is: ${brand}
+    <button class="deleteBtn">Delete Me</button>
+  </li>
+  `);
 }
